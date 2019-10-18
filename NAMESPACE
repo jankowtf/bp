@@ -2,6 +2,7 @@
 
 export(get_config)
 export(pretty_get_mapping_table)
+export(pretty_get_mapping_table_accounting)
 export(symbolize)
 export(trans_sum_y)
 export(trans_to_pretty)
