@@ -73,3 +73,18 @@ config::get() %>% unlist()
 tfautograph:::pluck_structure("column_orders", config::get())
 tfautograph:::pluck_structure("column_orders/data_structure_a", config::get())
 tfautograph:::pluck_structure("data_structure_a", config::get())
+
+x <- yaml::yaml.load(
+  'default:
+  column_names:
+    col_id: "id"
+    col_value: "value"
+  column_orders:
+    data_structure_a: [
+      column_names/col_id,
+      column_names/col_value
+    ]
+    data_structure_b: [
+      column_names/col_value,
+      column_names/col_id
+    ]')

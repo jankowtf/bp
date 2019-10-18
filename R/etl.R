@@ -1,6 +1,7 @@
 
 # Trans -------------------------------------------------------------------
 
+#' @export
 trans_sum_y <- function(
   x,
   .col_group = dplyr::sym("group"),
@@ -32,6 +33,7 @@ trans_sum_y <- function(
     dplyr::ungroup()
 }
 
+#' @export
 trans_to_pretty <- function(x, col, lookup) {
   col <- dplyr::enquo(col)
   col_pretty <- dplyr::sym(stringr::str_c(col %>% dplyr::quo_name(), "_pretty"))
@@ -42,6 +44,7 @@ trans_to_pretty <- function(x, col, lookup) {
     )
 }
 
+#' @export
 trans_to_pretty_lookup <- function(
   .x,
   .in
