@@ -15,8 +15,8 @@ pretty_get_mapping_table <- function(
   }
   # ...
 ) {
-  col_from
-  col_to
+  .col_from
+  .col_to
 
   # cols <- rlang::list2(...)
   mapping_table_parent %>%
@@ -35,8 +35,8 @@ pretty_get_mapping_table_accounting <- function(
     bp::symbolize()
   # ...
 ) {
-  col_from
-  col_to
+  .col_from
+  .col_to
 
   # cols <- rlang::list2(...)
   mapping_table_parent %>%
