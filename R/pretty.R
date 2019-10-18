@@ -20,8 +20,8 @@ pretty_get_mapping_table <- function(
 
   # cols <- rlang::list2(...)
   mapping_table_parent %>%
-    dplyr::select({{ col_from }} , {{ col_to }}) %>%
-    dplyr::filter({{ col_from }} %in% values)
+    dplyr::select({{ .col_from }} , {{ .col_to }}) %>%
+    dplyr::filter({{ .col_from }} %in% values)
 }
 
 #' @export
@@ -40,6 +40,6 @@ pretty_get_mapping_table_accounting <- function(
 
   # cols <- rlang::list2(...)
   mapping_table_parent %>%
-    dplyr::select({{ col_from }} , {{ col_to }}) %>%
-    dplyr::filter({{ col_from }} %in% values)
+    dplyr::select({{ .col_from }} , {{ .col_to }}) %>%
+    dplyr::filter({{ .col_from }} %in% values)
 }
