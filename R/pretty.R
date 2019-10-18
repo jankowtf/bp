@@ -3,10 +3,16 @@
 pretty_get_mapping_table <- function(
   mapping_table_parent,
   values,
-  col_from = bp::get_config("column_names/col_name") %>%
+  accounting = FALSE,
+  .col_from = bp::get_config("column_names/col_name") %>%
     bp::symbolize(),
-  col_to = bp::get_config("column_names/col_name_pretty") %>%
-    bp::symbolize()
+  .col_to = if (!accounting) {
+    bp::get_config("column_names/col_name_pretty") %>%
+      bp::symbolize()
+  } else {
+    bp::get_config("column_names/col_name_pretty_accounting") %>%
+      bp::symbolize()
+  }
   # ...
 ) {
   col_from
