@@ -1,0 +1,19 @@
+
+#' @export
+pretty_get_mapping_table <- function(
+  mapping_table_parent,
+  values,
+  col_from = bp::get_config("column_names/col_name") %>%
+    bp::symbolize(),
+  col_to = bp::get_config("column_names/col_name_pretty") %>%
+    bp::symbolize()
+  # ...
+) {
+  col_from
+  col_to
+
+  # cols <- rlang::list2(...)
+  mapping_table_parent %>%
+    dplyr::select({{ col_from }} , {{ col_to }}) %>%
+    dplyr::filter({{ col_from }} %in% values)
+}
