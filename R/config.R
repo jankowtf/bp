@@ -1,12 +1,19 @@
 #' @export
 get_config <- function(value, sep = "/") {
-  if (value %>% stringr::str_detect(sep)) {
+  value_0 <- value
+  ret <- if (value %>% stringr::str_detect(sep)) {
     value <- value %>% stringr::str_replace(sep, ".")
     configs <- config::get() %>% unlist()
     configs[value]
   } else {
     config::get(value)
   }
+
+  if (is.na(names(ret)) && is.na(ret)) {
+    stop(stringr::str_glue("No such config defined: {value_0}"))
+  }
+
+  ret
 }
 
 if (FALSE) {

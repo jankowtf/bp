@@ -54,7 +54,7 @@ get_config("column_names")
 # $col_value
 # [1] "value"
 
-get_config("column_names:col_id")
+get_config("column_names/col_id")
 # column_names.col_id
 # "id"
 

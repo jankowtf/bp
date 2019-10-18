@@ -1,4 +1,20 @@
 default:
+  globals:
+    scenario: bfa
+    version: 1
+    time_range_y: !expr as.character(2019:2024)
+    keyword_contract: contract
+    keyword_saas: saas
+  files:
+#    financial_plan_data: !expr here::here("data", "rappster_main.xlsx")
+    financial_plan_data: "test.xlsx"
+  column_names:
+    col_group: group
+    col_name: name
+    col_name_pretty: name_pretty
+    col_name_pretty_accounting: name_pretty_accounting
+
+sandbox:
   column_names:
     col_id: "id"
     col_value: "value"
