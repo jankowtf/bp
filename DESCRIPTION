@@ -1,7 +1,7 @@
 Package: bp
 Type: Package
 Title: Stuff you need for producing a business plan (or at least parts of it)
-Version: 0.0.1.9003
+Version: 0.0.1.9004
 Author: Who wrote it
 Maintainer: The package maintainer <yourself@somewhere.net>
 Description: More about what it does (maybe more than one line)
