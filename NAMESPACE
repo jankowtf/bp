@@ -2,4 +2,7 @@
 
 export(get_config)
 export(symbolize)
+export(trans_sum_y)
+export(trans_to_pretty)
+export(trans_to_pretty_lookup)
 import(magrittr)
