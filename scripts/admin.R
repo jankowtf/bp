@@ -6,6 +6,15 @@ renv::install("dplyr")
 
 usethis::use_package("magrittr")
 usethis::use_package("config")
+usethis::use_package("stringr")
+usethis::use_package("dplyr")
+
+
+# Temp only
+renv::install("t-kalinowski/tfautograph")
+renv::remove("tfautograph")
+
+# Misc stuff --------------------------------------------------------------
 
 get_config("column_names:col_group")
 get_config("column_names")
@@ -60,3 +69,7 @@ config::get() %>% unlist()
 # "column_names/col_id"        "column_names/col_value"
 # column_orders.data_structure_b1 column_orders.data_structure_b2
 # "column_names/col_value"           "column_names/col_id"
+
+tfautograph:::pluck_structure("column_orders", config::get())
+tfautograph:::pluck_structure("column_orders/data_structure_a", config::get())
+tfautograph:::pluck_structure("data_structure_a", config::get())
