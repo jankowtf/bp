@@ -30,3 +30,5 @@ usethis::use_testthat()
 # Scratch -----------------------------------------------------------------
 
 load_configs()
+configs <- get_config("column_names")
+assign_configs(configs)

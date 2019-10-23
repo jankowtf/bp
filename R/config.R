@@ -103,3 +103,34 @@ load_configs <- function(dir = here::here()) {
         rlang::eval_tidy()
     })
 }
+
+#' @export
+assign_configs <- function(
+  configs,
+  # env = rlang::env_parent()
+  env = rlang::caller_env(),
+  from = "config.yml"
+) {
+  purrr::map2(names(configs), configs, function(.x, .y) {
+    if (!is.list(.y)) {
+      .y <- if (is.call(.y)) {
+        rlang::eval_tidy(.y)
+      } else if (is.character(.y)) {
+        if (.y[[1]] %>% stringr::str_detect("/")) {
+          # TODO-20190925-1: find better solution for vectorized input
+          .y %>% purrr::map_chr(get_config, from = from)
+        } else {
+          .y
+        }
+      } else {
+        stop("Unsupported value for .y")
+      }
+      .y <- if (length(.y) == 1) {
+        rlang::sym(.y)
+      } else {
+        rlang::syms(.y)
+      }
+    }
+    assign(.x, .y, envir = env)
+  })
+}
