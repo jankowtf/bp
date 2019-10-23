@@ -14,7 +14,18 @@ default:
     col_name_pretty: name_pretty
     col_name_pretty_accounting: name_pretty_accounting
 
-sandbox:
+  column_orders:
+    data_structure_a: [
+      column_names/col_id,
+      column_names/col_value
+    ]
+    data_structure_b: [
+      column_names/col_value,
+      column_names/col_id
+    ]
+
+stackoverflow:
+  inherits: NULL
   column_names:
     col_id: "id"
     col_value: "value"

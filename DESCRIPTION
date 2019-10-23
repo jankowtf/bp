@@ -13,5 +13,8 @@ Imports:
     magrittr,
     config,
     stringr,
-    dplyr
+    dplyr,
+    here
 RoxygenNote: 6.1.1
+Suggests: 
+    testthat
