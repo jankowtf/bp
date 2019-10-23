@@ -4,11 +4,11 @@
   Sys.setenv(language = "en")
 
   # Load configs -----
-  print(here::here())
-  load_configs()
+  # print(here::here())
+  # load_configs()
 
   # For plumber testing -----
-  .__STATE__ <<- new.env(parent = emptyenv()) #create .state when package is first loaded
+  # .__STATE__ <<- new.env(parent = emptyenv()) #create .state when package is first loaded
 
   invisible(TRUE)
 }
