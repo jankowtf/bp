@@ -9,19 +9,19 @@ default:
 #    financial_plan_data: !expr here::here("data", "rappster_main.xlsx")
     financial_plan_data: "test.xlsx"
   column_names:
-    col_group: group
-    col_name: name
-    col_name_pretty: name_pretty
-    col_name_pretty_accounting: name_pretty_accounting
+    .col_group: group
+    .col_name: name
+    .col_name_pretty: name_pretty
+    .col_name_pretty_accounting: name_pretty_accounting
 
   column_orders:
     data_structure_a: [
-      column_names/col_id,
-      column_names/col_value
+      column_names/.col_id,
+      column_names/.col_value
     ]
     data_structure_b: [
-      column_names/col_value,
-      column_names/col_id
+      column_names/.col_value,
+      column_names/.col_id
     ]
 
 stackoverflow:
@@ -31,10 +31,10 @@ stackoverflow:
     col_value: "value"
   column_orders:
     data_structure_a: [
-      column_names/col_id,
-      column_names/col_value
+      column_names/.col_id,
+      column_names/.col_value
     ]
     data_structure_b: [
-      column_names/col_value,
-      column_names/col_id
+      column_names/.col_value,
+      column_names/.col_id
     ]
