@@ -89,6 +89,11 @@ get_list_element_recursively <- function(
 #' @export
 load_configs <- function(dir = here::here()) {
   config_files <- fs::dir_ls(dir, type = "file", regexp = "\\.yml$")
+  idx <- config_files %>%
+    fs::path_file() %>%
+    stringr::str_detect("^(_|\\.)", negate = TRUE)
+  config_files <- config_files[idx]
+
   config_files %>%
     purrr::walk(function(.file) {
       message(stringr::str_glue("Loading config into options: {fs::path_file(.file)}"))

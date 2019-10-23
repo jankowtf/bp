@@ -25,3 +25,8 @@ renv::remove("reprex")
 # Usethis statements ------------------------------------------------------
 
 usethis::use_testthat()
+
+
+# Scratch -----------------------------------------------------------------
+
+load_configs()
