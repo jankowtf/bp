@@ -5,36 +5,48 @@ default:
     time_range_y: !expr as.character(2019:2024)
     keyword_contract: contract
     keyword_saas: saas
-  files:
-#    financial_plan_data: !expr here::here("data", "rappster_main.xlsx")
-    financial_plan_data: "test.xlsx"
   column_names:
+    .col_diff_abs: diff_abs
+    .col_diff_rel: diff_rel
     .col_group: group
+    .col_group_pretty: group_pretty
+    .col_in_contract_deduct_default_mixed: in_contract_deduct_default_mixed
+    .col_in_contract_deduct_sconto_mixed: in_contract_deduct_sconto_mixed
+    .col_in_contract_rev_net_mixed: in_contract_rev_net_mixed
+    .col_in_contract_rev_planned_mixed: in_contract_rev_planned_mixed
+    .col_in_saas_deduct_default_m: in_saas_deduct_default_m
+    .col_in_saas_deduct_default_y: in_saas_deduct_default_y
+    .col_in_saas_rev_net_m: in_saas_rev_net_m
+    .col_in_saas_rev_net_y: in_saas_rev_net_y
+    .col_in_saas_rev_planned_m: in_saas_rev_planned_m
+    .col_in_saas_rev_planned_y: in_saas_rev_planned_y
+    .col_month: month
     .col_name: name
     .col_name_pretty: name_pretty
     .col_name_pretty_accounting: name_pretty_accounting
-
-  column_orders:
-    data_structure_a: [
-      column_names/.col_id,
-      column_names/.col_value
-    ]
-    data_structure_b: [
-      column_names/.col_value,
-      column_names/.col_id
-    ]
-
-stackoverflow:
-  inherits: NULL
-  column_names:
-    col_id: "id"
-    col_value: "value"
-  column_orders:
-    data_structure_a: [
-      column_names/.col_id,
-      column_names/.col_value
-    ]
-    data_structure_b: [
-      column_names/.col_value,
-      column_names/.col_id
-    ]
+    .col_year: year
+    .col_version: version
+  files:
+    financial_plan_data:
+      file_path: !expr here::here("data", "rappster_main.xlsx")
+      sheets:
+        in_contract: in_contract
+        out_contract: out_contract
+        in_saas: in_saas
+        out_saas: out_saas
+  keywords:
+    contract: contract
+    diff: diff
+    direct: direct
+    group: group
+    in: in
+    mkt: mkt
+    out: out
+    pretty: pretty
+    saas: saas
+  suffixes:
+    year: "y"
+    month: m
+    week: w
+    day: d
+    mixed: mixed

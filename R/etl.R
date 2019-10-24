@@ -4,11 +4,15 @@
 #' @export
 trans_sum_y <- function(
   x,
-  .col_group = dplyr::sym("group"),
-  .col_year = dplyr::sym("year"),
-  .suffix_m = "m",
-  .suffix_y = "y",
-  .suffix_mixed = "mixed"
+  # .col_group = dplyr::sym("group"),
+  .col_group = bp::get_config("column_names/.col_group") %>%
+    bp::symbolize(),
+  # .col_year = dplyr::sym("year"),
+  .col_year = bp::get_config("column_names/.col_year") %>%
+    bp::symbolize(),
+  .suffix_m = bp::get_config("suffixes/month"),
+  .suffix_y = bp::get_config("suffixes/year"),
+  .suffix_mixed = bp::get_config("suffixes/mixed")
 ) {
   # .col_group
   # .col_year
