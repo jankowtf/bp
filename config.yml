@@ -45,6 +45,7 @@ default:
     pretty: pretty
     saas: saas
   suffixes:
+    base: base
     year: "y"
     month: m
     week: w
